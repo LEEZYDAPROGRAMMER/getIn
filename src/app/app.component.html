@@ -1,0 +1,71 @@
+<!--main header.-->
+
+<mat-card class="mycard">
+  <mat-card-header>
+    <div mat-card-avatar class="headerImage"></div>
+    <mat-card-title> {{title}} </mat-card-title>
+    
+  </mat-card-header>
+</mat-card>
+
+<!--stomach .-->
+
+<mat-card class="mycard2">
+  <form [formGroup]="personForm">
+    <!--name .-->
+    <p class="re" *ngIf="!personForm.valid">*required</p>
+
+    <mat-form-field class="inBox">
+      <input [(ngModel)]="name"  matInput placeholder="name" formControlName="name" />
+    </mat-form-field><br/>
+
+     <!--surname .-->
+     <p class="re" *ngIf="!personForm.valid">*required</p>
+
+     <mat-form-field class="inBox">
+       <input [(ngModel)]="surname"  matInput placeholder="Surname" formControlName="surname" />
+     </mat-form-field><br/>
+
+      <!--Age .-->
+    <p class="re" *ngIf="!personForm.valid">*required</p>
+
+    <mat-form-field class="inBox" >
+      <input [(ngModel)]="age"  matInput placeholder="Age" formControlName="age" />
+    </mat-form-field><br/>
+
+     <!--Email .-->
+     <p class="re" *ngIf="!personForm.valid">*required</p>
+
+     <mat-form-field class="inBox">
+       <input [(ngModel)]="email"  matInput placeholder="email" formControlName="email" />
+     </mat-form-field><br/>
+
+      <!--Phone number .-->
+      <p class="re" *ngIf="!personForm.valid">*required</p>
+
+      <mat-form-field class="inBox">
+        <input [(ngModel)]="cellno"  matInput placeholder="cellphone number" formControlName="cellno" />
+      </mat-form-field><br/>
+
+ <!--save information button .-->
+   <button class="butt" mat-raised-button color="primary" [disabled]="!personForm.valid"  (click)="addUser()"> Save </button>
+  </form>
+ 
+</mat-card>
+
+
+<mat-card class="disCard" *ngIf="saved">
+    <mat-card-header>
+        <mat-card-title> Welcome To WorkRoom !</mat-card-title>
+    </mat-card-header>
+<!--user information .-->
+<ul  *ngFor="let infos of userInfo" >
+ <li>Name: {{infos.name}}</li>
+ <li>Surname: {{infos.surname}}</li>
+ <li>Age:  {{infos.age}}</li>
+ <li>Email: {{infos.email}}</li>
+ <li> Cellphone No: {{infos.cellno}}</li>
+     
+</ul>
+</mat-card>
+<!--footer .-->
