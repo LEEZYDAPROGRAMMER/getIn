@@ -11,6 +11,7 @@
 <!--stomach .-->
 
 <mat-card class="mycard2">
+  <mat-card-content>
   <form [formGroup]="personForm">
     <!--name .-->
     <p class="re" *ngIf="!personForm.valid">*required</p>
@@ -34,23 +35,26 @@
     </mat-form-field><br/>
 
      <!--Email .-->
-     <p class="re" *ngIf="!personForm.valid">*required</p>
+     <p class="re" *ngIf="!personForm.valid">*required  </p>
 
      <mat-form-field class="inBox">
        <input [(ngModel)]="email"  matInput placeholder="email" formControlName="email" />
      </mat-form-field><br/>
 
       <!--Phone number .-->
-      <p class="re" *ngIf="!personForm.valid">*required</p>
+      <p class="re" *ngIf="!personForm.valid">*required </p>
 
       <mat-form-field class="inBox">
         <input [(ngModel)]="cellno"  matInput placeholder="cellphone number" formControlName="cellno" />
       </mat-form-field><br/>
 
+
+      
+
  <!--save information button .-->
    <button class="butt" mat-raised-button color="primary" [disabled]="!personForm.valid"  (click)="addUser()"> Save </button>
   </form>
- 
+</mat-card-content>
 </mat-card>
 
 
