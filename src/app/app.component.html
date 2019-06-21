@@ -16,36 +16,36 @@
     <!--name .-->
     <p class="re" *ngIf="!personForm.valid">*required</p>
 
-    <mat-form-field class="inBox">
-      <input [(ngModel)]="name"  matInput placeholder="name" formControlName="name" />
+    <mat-form-field class="inBox" hintLabel="must be letters only">
+      <input [(ngModel)]="name"  matInput placeholder="name" formControlName="name"  required/>
     </mat-form-field><br/>
 
      <!--surname .-->
      <p class="re" *ngIf="!personForm.valid">*required</p>
 
-     <mat-form-field class="inBox">
-       <input [(ngModel)]="surname"  matInput placeholder="Surname" formControlName="surname" />
+     <mat-form-field class="inBox" hintLabel="must be letters only">
+       <input [(ngModel)]="surname"  matInput placeholder="Surname" formControlName="surname" required/>
      </mat-form-field><br/>
 
       <!--Age .-->
     <p class="re" *ngIf="!personForm.valid">*required</p>
 
-    <mat-form-field class="inBox" >
-      <input [(ngModel)]="age"  matInput placeholder="Age" formControlName="age" />
+    <mat-form-field class="inBox" hintLabel="must be 3 characters">
+      <input #input maxlength="3" [(ngModel)]="age" matInput placeholder="Age" formControlName="age"  required/>
     </mat-form-field><br/>
 
      <!--Email .-->
      <p class="re" *ngIf="!personForm.valid">*required  </p>
 
-     <mat-form-field class="inBox">
-       <input [(ngModel)]="email"  matInput placeholder="email" formControlName="email" />
+     <mat-form-field class="inBox" hintLabel="must be an email">
+       <input [(ngModel)]="email"  matInput placeholder="email" formControlName="email"  required/>
      </mat-form-field><br/>
 
       <!--Phone number .-->
       <p class="re" *ngIf="!personForm.valid">*required </p>
 
-      <mat-form-field class="inBox">
-        <input [(ngModel)]="cellno"  matInput placeholder="cellphone number" formControlName="cellno" />
+      <mat-form-field class="inBox" hintLabel="must be 10 characters">
+        <input #input maxlength="10" #input minlength="10" [(ngModel)]="cellno"  matInput placeholder="cellphone number" formControlName="cellno"  required/>
       </mat-form-field><br/>
 
 

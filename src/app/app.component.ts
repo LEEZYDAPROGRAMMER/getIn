@@ -11,7 +11,6 @@ export class AppComponent {
 
   personForm
  
-
   userInfo=[]
   saved=false;
 
@@ -23,7 +22,8 @@ export class AppComponent {
 // create a public constructor for form builder 
    constructor(public formBuilder:FormBuilder)
      {
-             this.personForm= formBuilder.group(
+           //main 
+            this.personForm= formBuilder.group(
           {
                name : ["",Validators.pattern('[a-zA-Z]*')],
                surname : ["",Validators.pattern('[a-zA-Z]*')],
@@ -33,7 +33,9 @@ export class AppComponent {
  
           });
 
-          //main 
+
+     
+
        
      }
 
